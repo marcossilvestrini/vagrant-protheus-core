@@ -116,10 +116,7 @@ $Env:VAGRANT_PREFER_SYSTEM_BIN += 0
 - Instal and configure lockserver
 - Instal and configure licenserver
 - Install and configure dbaccess
-- Install and configure appserver_boker
-- Install and configure appserver_slaves
-- Install and configure appserver_rest
-- Install and configure appserver_soap
+- Install and configure appserver_slave
 
 ## Roles Short Explanations
 
@@ -155,10 +152,4 @@ This role configure binaries for:\
 
 - lockserver
 - broker
-- slaves
-- soap
-- rest
-
-### jenkins
-
-Optional role for create and configure jenkins node in host
+- slave
