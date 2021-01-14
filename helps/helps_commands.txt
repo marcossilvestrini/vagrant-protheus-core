@@ -1,0 +1,15 @@
+# Sync Files
+rsync -avzh --exclude=.vagrant --exclude=.git --progress /mnt/projects/vagrant-protheus-core/ /home/marcos.silvestrini/vagrant-protheus-core
+
+# Copy pk vagrant machine
+cp .vagrant/machines/protheus-core/virtualbox/private_key /mnt/projects/vagrant-protheus-core/linux/security/
+
+# Copy files vagrant machine
+vagrant scp ~/vagrant-protheus-core/install/license.zip ol8-protheus:/totvs/install
+
+# Execute single playbook
+ansible-playbook -i provisioning/hosts/  provisioning/protheus.yml --private-key .vagrant/machines/protheus-core/virtualbox/private_key -u vagrant
+
+# Set Time-Zone
+timedatectl set-timezone America/Sao_Paulo
+

@@ -1,0 +1,109 @@
+---
+paths:
+    - '{{ appserver_path }}/lockserver'
+    - '{{ appserver_path }}/slave01'
+
+scripts:
+    - totvslockserver.j2
+    - totvslave01.j2
+
+# slave01
+slave01_port: 7031
+slave01_http_port: 7131
+slave01_name: protheus_slave01
+slave01_displayname: protheus_slave01
+slave01_description: protheus_slave01
+slave01_consoleFile: '{{logs}}/{{ slave01_name }}.log'
+slave01_latencyLogFile: '{{logs}}/latency_{{ slave01_name }}.log'
+slave01_LogProfilerPath: '{{logs}}/logprofiler_{{ slave01_name }}.log'
+
+# Vars Appserver.ini Default
+
+## [Environment]
+StartPath: /system/
+local_files: CTREE
+localdbextension: .dtc
+rpodb: Top
+rpolanguage: Portuguese
+RegionalLanguage: BRA
+rpoversion: 120
+ThreadMemWarning: 1000
+ThreadMemStep: 100
+KillStack: 1
+Trace: 0
+TOPMemoMega: 1
+TraceStack: 1
+MaxLocks: 10000
+AdvSQLReplay: 0
+AdvSQLReplayLog: 0
+AdvSQLReplayPath: '/SQLReplay/'
+AdvSQLReplayIOP: 0
+AdvSQLReplayLogMaxSize: 536870912
+StartSysInDB: 1
+
+
+## [DBAccess]
+DBAccessServer: '{{ dbaccess_ip }}'
+Database: '{{ database }}'
+Alias: '{{ alias }}'
+Driver: dbapi.so
+MemoMega: 1
+
+## [Drivers]
+MultiProtocolPort: 1
+MultiProtocolPortSecure: 1
+Secure: SSL
+
+## [lockserver]
+lockserverEnable: 0
+lockserverSecureConnection: 0
+lockserverMessageLog: 1
+
+## [TCP]
+Type: TCPIP
+
+## [General]
+ConsoleLog: 1
+ChangeEncodingBehavior: 0
+InactiveTimeout: 300
+CanAcceptDebugger: 1
+CanAcceptLB: 1
+CanAcceptMonitor: 1
+CanRunJobs: 1
+CanAcceptRPC: 1
+DebugThreadUsedMemory: 1
+FloatingPointPrecise: 0
+IdeMessages: 0
+LogTimeStamp : 1
+ShowFullLog: 0
+ShowIPClient: 0
+SocketMessages: 0
+SSLRedirect: 0
+LatencyLog: 0
+LogHttpFuncs:  0
+MaxStringSize: 10
+WsdlStreamType: 0
+SocketsDefaultIPV6: 0
+ServerMemoryLimit: 1024
+InstallPath: app_path
+
+## [TDS]
+ALLOWAPPLYPATCH: '{{ ip_app }}'
+ALLOWEDIT: '{{ ip_app }}'
+ENABLEDISCONNECTUSER: '{{ ip_app }}'
+ENABLESENDMESSAGE: '{{ ip_app }}'
+ENABLEBLOCKNEWCONNECTION: '{{ ip_app }}'
+ENABLESTOPSERVER: '{{ ip_app }}'
+
+## [APP_MONITOR]
+enable_monitor: 1
+
+## [update]
+enable_update: 1
+
+## [WEBAPP]
+EnvServer: '{{environment_name}}'
+LastMainProg: 'SIGAADV,SIGAMDI,SIGACFG,SRVWIZARD'
+MaxBodySize: 10485760
+MaxHeaderSize: 1024
+MaxRequestTime: 30
