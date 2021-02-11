@@ -2,6 +2,7 @@
 **/.vscode
 **/.log
 **/.vagrant
+*workspace.code*
 
 #security
 **/authorized_keys

@@ -1,0 +1,5 @@
+---
+- name: Set Slave01 appserver.ini
+  win_template:
+    src: totvslave01.ini.j2
+    dest: '{{ slave01_path }}\appserver_slave01.ini'
