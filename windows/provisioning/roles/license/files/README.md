@@ -12,8 +12,8 @@
 
 bin\
    appserver\
-   monitor\
+   monitor
 
 data\
     apo\
-    certs\
+    certs
