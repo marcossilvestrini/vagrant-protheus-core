@@ -69,11 +69,7 @@ dbaccess_monitor_port: 7901
 dbaccess_path: '{{ app_path }}\dbaccess'
 
 # Appservers Paths
-broker_path: '{{ appserver_path }}\broker'
 slave01_path: '{{ appserver_path }}\slave01'
-slave02_path: '{{ appserver_path }}\slave02'
-soap_path: '{{ appserver_path }}\soap'
-rest_path: '{{ appserver_path }}\rest'
 
 # Protheus Environments
 environment_name: SKYNET
