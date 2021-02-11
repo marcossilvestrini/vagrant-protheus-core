@@ -18,6 +18,7 @@
 **/provisioning/**/*.so*
 **/provisioning/**/*.dll*
 
+
 # rules postgresql
 **/*.retry
 **/*/__pycache__
@@ -25,3 +26,7 @@
 
 # Install
 linux/install
+
+# backups
+dictionary
+diagrams
