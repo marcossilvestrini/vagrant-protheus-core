@@ -78,7 +78,7 @@ vagrant ––version
 
 1. clone this reposotory
 2. Generate your ssh pub key and **copy to security/ folder**
-3. Download artefacts of ERP(license,rpo,appserver,etc)
+3. **Download artefacts of ERP in specific SO(license,rpo,dbaccess,appserver,etc)**
 4. Copy artefacts for relative folders(license,rpo,appserver,etc)
 5. cd vagrant-protheus\linux_or_windows
 6. vagrant validate
