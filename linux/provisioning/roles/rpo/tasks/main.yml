@@ -9,7 +9,7 @@
 
 - name: Copy RPO File
   copy:
-    src: tttp120.rpo
+    src: tttm120.rpo
     dest: "{{ rpo_path }}"
     mode: '0775'
     owner: '{{ user_service }}'

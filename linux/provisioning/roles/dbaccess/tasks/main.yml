@@ -44,5 +44,23 @@
     group: '{{ user_service }}'
     mode: 0775
 
+- name: Create PID file
+  file:
+    path: '/var/run/dbaccess64.pid'
+    state: touch
+    mode: '0775'
+    owner: '{{ user_service }}'
+    group: '{{ user_service }}'
+  become: yes
+
+- name: Create LOCK file
+  file:
+    path: '/var/lock/subsys/dbaccess64'
+    state: touch
+    mode: '0775'
+    owner: '{{ user_service }}'
+    group: '{{ user_service }}'
+  become: yes
+
 # Set postgresql-odbc
 - include_tasks: odbc.yml

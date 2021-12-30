@@ -12,6 +12,7 @@ common_packages:
     - libXft
     - libtool-ltdl
     - libtool-ltdl-devel
+    - ncurses-compat-libs
     - xorg-x11-server-Xorg
     - xorg-x11-xauth
     - vim

@@ -17,6 +17,28 @@
     mode: '0775'
     remote_src: yes
 
+- name: Create PID file
+  file:
+    path: '/var/run/{{ item }}.pid'
+    state: touch
+    mode: '0775'
+    owner: '{{ user_service }}'
+    group: '{{ user_service }}'
+  loop:
+    '{{ bin_name }}'
+  become: yes
+
+- name: Create LOCK file
+  file:
+    path: '/var/lock/subsys/{{ item }}'
+    state: touch
+    mode: '0775'
+    owner: '{{ user_service }}'
+    group: '{{ user_service }}'
+  loop:
+    '{{ bin_name }}'
+  become: yes
+
 - name: Set LD_LIBRARY_PATH Variable in .bashrc
   template:
     src: .bashrc.j2

@@ -6,9 +6,14 @@
 
 ## List of Files(Install license, zip install and copy in this path)
 
-- license.zip
+- certs.tar.gz
+- appserver.tar.gz
+- tttp120.rpo
+- webapp.so
 
 ## Structure of Folders
+
+\totvs\license
 
 bin\
    appserver\

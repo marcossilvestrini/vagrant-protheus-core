@@ -3,6 +3,10 @@ paths:
     - '{{ appserver_path }}/lockserver'
     - '{{ appserver_path }}/slave01'
 
+bin_name:
+    - app_lockserver
+    - app_slave01
+
 scripts:
     - totvslockserver.j2
     - totvslave01.j2
