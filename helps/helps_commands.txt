@@ -7,12 +7,13 @@ rsync -avzh  \
 --exclude=.gitignore \
 --exclude=fix \
 --exclude=helps \
---exclude=boxes \
+--exclude=Vagrant \
 --exclude=diagrams \
 --exclude=LICENSE \
 --exclude=README.md \
 --progress /mnt/projects/vagrant-protheus-core/ /home/marcos.silvestrini/vagrant-protheus-core && \
-cp ~/.ssh/id_rsa.pub /home/marcos.silvestrini/vagrant-protheus-core/linux/security
+cp ~/.ssh/id_rsa.pub /home/marcos.silvestrini/vagrant-protheus-core/linux/security && \
+cd && cd vagrant-protheus-core && rm -rf dictionary
 
 # Copy pk vagrant machine
 cp .vagrant/machines/protheus-core/virtualbox/private_key /mnt/projects/vagrant-protheus-core/linux/security/

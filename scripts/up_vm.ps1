@@ -11,7 +11,7 @@ $vm = "$($vmPath)\vagrant-ansible.vmx"
 $ip = "192.168.0.33"
 $vmxName = "vagrant-ansible"
 $memoryMB = "16000"
-$processors = "3"
+$processors = "6"
 
 # Up vmware
 Write-Host "Up Vmware Workstation in path: [$($vmware)]" -BackgroundColor White -ForegroundColor Black
@@ -58,4 +58,4 @@ Stop-Process -ErrorAction SilentlyContinue >$null
 
 # Open session SSH
 Write-Host "Open SSH Connection" -BackgroundColor White -ForegroundColor Black
-& $putty -load "vagrant-protheus-core"
+& $putty -load "srv-devops"

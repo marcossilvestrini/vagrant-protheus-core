@@ -43,7 +43,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     protheus.vm.hostname =APP_NAME
 
     # NETWORK
-    protheus.vm.network "public_network" ,ip: "192.168.0.133",mode: "bridge" , bridge: "ens32"
+    protheus.vm.network "public_network" ,ip: "192.168.0.133",mode: "bridge" ,bridge: [
+    "ens32",
+    "Marvell AQtion 5Gbit Network Adapter"
+    ]
 
     # Forward Port
     # protheus.vm.network "forwarded_port", guest: 8020, host: 9020, adapter: 1, guest_ip: "192.168.0.133" ,host_ip: "192.168.0.33"
@@ -82,6 +85,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       ansible.inventory_path = "provisioning/hosts"
       ansible.playbook = "provisioning/app.yml"
     end
+
+    # UP STACK APP
+    protheus.vm.provision "shell", inline: <<-SHELL
+        /totvs/scripts/up-stack-vagrant.sh
+    SHELL
+
 
   end
 
